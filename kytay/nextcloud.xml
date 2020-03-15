@@ -5,7 +5,7 @@
 	<Name>nextcloud</Name>
 	<Repository>nextcloud</Repository>
 	<Project>https://nextcloud.com</Project>
-	<Registry>https://registry.hub.docker.com/library/nextcloud</Registry>
+	<Registry>https://hub.docker.com/_/nextcloud</Registry>
 	<Network>bridge</Network>
 	<Privileged>false</Privileged>
 	<WebUI>https://[IP]:[PORT:443]/</WebUI>
