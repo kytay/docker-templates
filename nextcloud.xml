@@ -2,7 +2,7 @@
 <Container>
 	<TemplateURL>https://raw.githubusercontent.com/kytay/docker-templates/master/nextcloud.xml</TemplateURL>
 	<Date>2020-03-15</Date>
-	<Name>kytay/nextcloud</Name>
+	<Name>nextcloud</Name>
 	<Repository>nextcloud</Repository>
 	<Project>https://nextcloud.com</Project>
 	<Registry>https://registry.hub.docker.com/library/nextcloud</Registry>
