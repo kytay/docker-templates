@@ -65,4 +65,7 @@
       <Name>GITLAB_OMNIBUS_CONFIG</Name>
     </Variable>
   </Environment>
+  <Config Name="GitLab Config" Target="/etc/gitlab" Default="" Mode="rw" Description="Container Path: /etc/gitlab" Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="GitLab Logs" Target="/var/log/gitlab" Default="" Mode="rw" Description="Container Path: /var/log/gitlab" Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="GitLab Data" Target="/var/opt/gitlab" Default="" Mode="rw" Description="Container Path: /var/opt/gitlab" Type="Path" Display="always" Required="false" Mask="false"></Config>
 </Container>
