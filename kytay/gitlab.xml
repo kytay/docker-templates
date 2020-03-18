@@ -10,7 +10,6 @@
   <TemplateURL>https://raw.githubusercontent.com/kytay/docker-templates/master/gitlab.xml</TemplateURL>
   <Icon>https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png</Icon>
   <ExtraParams>--hostname hostname.local</ExtraParams>
-  <Description/>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -66,5 +65,4 @@
       <Name>GITLAB_OMNIBUS_CONFIG</Name>
     </Variable>
   </Environment>
-  <Labels/>
 </Container>
