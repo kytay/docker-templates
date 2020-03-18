@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>youtrack</Name>
+  <Repository>jetbrains/youtrack:2019.3.65511</Repository>
+  <Registry>https://hub.docker.com/r/jetbrains/youtrack</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Project>https://www.jetbrains.com/youtrack/</Project>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/kytay/docker-templates/master/youtrack.xml</TemplateURL>
+  <Icon>https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/YouTrack.svg/220px-YouTrack.svg.png</Icon>
+  <ExtraParams>--hostname hostname.local</ExtraParams>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/youtrack/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/youtrack/conf</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/youtrack/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/youtrack/backups</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+    </Variable>
+  </Environment>
+  <Config Name="YouTrack Data" Target="/opt/youtrack/data" Default="" Mode="rw" Description="Container Path: /opt/youtrack/data" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="YouTrack Config" Target="/opt/youtrack/conf" Default="" Mode="rw" Description="Container Path: /opt/youtrack/conf" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="YouTrack Logs" Target="/opt/youtrack/logs" Default="" Mode="rw" Description="Container Path: /opt/youtrack/logs" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="YouTrack Backups" Target="/opt/youtrack/backups" Default="" Mode="rw" Description="Container Path: /opt/youtrack/backups" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="YouTrack HTTP Port" Target="8080" Default="80" Description="Container Port 8080" Type="Port" Mode="tcp" Display="always" Required="true"></Config>
+  <Config Name="PUID" Target="PUID" Default="99" Description="User ID" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="PGID" Target="PUID" Default="100" Description="Group ID" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+</Container>

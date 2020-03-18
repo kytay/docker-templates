@@ -60,10 +60,6 @@
       <Value>100</Value>
       <Name>PGID</Name>
     </Variable>
-    <Variable>
-      <Value>external_url "hostname.local"; pages_external_url "page.local"; gitlab_pages['enable'] = true; gitlab_pages['access_control'] = true; gitlab_rails['smtp_enable'] = true; gitlab_rails['smtp_address'] = "smtp"; gitlab_rails['smtp_port'] = 25;</Value>
-      <Name>GITLAB_OMNIBUS_CONFIG</Name>
-    </Variable>
   </Environment>
   <Config Name="GitLab Config" Target="/etc/gitlab" Default="" Mode="rw" Description="Container Path: /etc/gitlab" Type="Path" Display="always" Required="true" Mask="false"></Config>
   <Config Name="GitLab Logs" Target="/var/log/gitlab" Default="" Mode="rw" Description="Container Path: /var/log/gitlab" Type="Path" Display="always" Required="true" Mask="false"></Config>
@@ -71,7 +67,6 @@
   <Config Name="GitLab HTTP Port" Target="80" Default="80" Description="Container Port 80" Type="Port" Mode="tcp" Display="always" Required="true"></Config>
   <Config Name="GitLab HTTPS Port" Target="443" Default="443" Description="Container Port 443" Type="Port" Mode="tcp" Display="always" Required="true"></Config>
   <Config Name="GitLab SSH Port" Target="22" Default="22" Description="Container Port 22" Type="Port" Mode="tcp" Display="always" Required="true"></Config>
-  <Config Name="GitLab Omnibus Config" Target="GITLAB_OMNIBUS_CONFIG" Default="external_url 'hostname.local'; gitlab_rails['smtp_enable'] = true; gitlab_rails['smtp_address'] = 'smtp'; gitlab_rails['smtp_port'] = 25;" Description="Configuration for Omnibus" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="PUID" Target="PUID" Default="99" Description="User ID" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="PGID" Target="PUID" Default="100" Description="Group ID" Type="Variable" Display="always" Required="true" Mask="false"></Config>
 </Container>
