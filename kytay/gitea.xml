@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>gitea</Name>
+  <Repository>gitea/gitea:1.11.3</Repository>
+  <Registry>https://hub.docker.com/r/gitea/gitea/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Project>https://gitea.io/en-us/</Project>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/kytay/docker-templates/master/gitea.xml</TemplateURL>
+  <Icon>https://docs.gitea.io/images/gitea.png</Icon>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>22</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/etc/timezone</HostDir>
+      <ContainerDir>/etc/timezone</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/etc/localtime</HostDir>
+      <ContainerDir>/etc/localtime</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value></Value>
+      <Name>ROOT_URL</Name>
+    </Variable>
+    <Variable>
+      <Value>Some Git Name</Value>
+      <Name>APP_NAME</Name>
+    </Variable>
+    <Variable>
+      <Value>prod</Value>
+      <Name>RUN_MODE</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>DISABLE_SSH</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>LFS_START_SERVER</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>DISABLE_REGISTRATION</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>REQUIRE_SIGNIN_VIEW</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>DB_TYPE</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>DB_HOST</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>DB_NAME</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>DB_USER</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>DB_PASSWD</Name>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+    </Variable>
+  </Environment>
+  <Config Name="DB_TYPE" Target="DB_TYPE" Default="mysql" Description="database type: mysql, postgres, mssql, sqlite3" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="DB_HOST" Target="DB_HOST" Default="hostname:3306" Description="hostname:port" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="DB_NAME" Target="DB_NAME" Default="gitea" Description="database name" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="DB_USER" Target="DB_USER" Default="gitea" Description="db user" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="DB_PASSWD" Target="DB_PASSWD" Default="gitea" Description="db password" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="ROOT_URL" Target="ROOT_URL" Default="http://gitea:3000" Description="gitea root url" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="APP_NAME" Target="APP_NAME" Default="gitea" Description="gitea app name" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="RUN_MODE" Target="RUN_MODE" Default="prod" Description="run mode: prod, dev" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="DISABLE_SSH" Target="DISABLE_SSH" Default="true" Description="gitea to use SSH" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="LFS_START_SERVER" Target="LFS_START_SERVER" Default="true" Description="gitea to enable LFS" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="DISABLE_REGISTRATION" Target="DISABLE_REGISTRATION" Default="true" Description="gitea to disable registration" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="REQUIRE_SIGNIN_VIEW" Target="REQUIRE_SIGNIN_VIEW" Default="true" Description="gitea to disable public view" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Gitea Data" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Gitea HTTP Port" Target="3000" Default="" Description="Container Port 3000" Type="Port" Mode="tcp" Display="always" Required="true"></Config>
+  <Config Name="Gitea SSH Port" Target="22" Default="" Description="Container Port 22" Type="Port" Mode="tcp" Display="always" Required="true"></Config>
+  <Config Name="PUID" Target="PUID" Default="99" Description="User ID" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="PGID" Target="PUID" Default="100" Description="Group ID" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+</Container>
